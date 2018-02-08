@@ -3,7 +3,7 @@
   "OnlineLimit": 8000,
   "Name": "master",
   "Master": {
-    //是否启动Master功能,如果为true,进程会每个三秒向Master模块汇报其所在模块运行信息
+    //是否启动Master功能
     "ISRealMaster": true,
     //记录统计信息
     "DBConfig": {
@@ -18,8 +18,8 @@
       "Uri": "redis://192.168.0.74:6379/2",
       "Queue": "APPTrans"
     },
-    //管理模块的类型,与Module列表中ModuleType对应,开发者可以改为一个随机名称,以防止被非法访问
-    "MasterType": "Master"
+    //是否启用集群功能
+    "Enable": false
   },
   "Module": {
     "Gate": [
@@ -32,6 +32,28 @@
         "ProcessID": "development",
         "Settings": {
           "TCPAddr": "tcp://0.0.0.0:1883"
+        }
+      }
+    ],
+    "User": [
+      {
+        "Id": "User001",
+        "ByteId": 2,
+        "ProcessID": "development",
+        "Redis": {
+          "Uri": "redis://192.168.0.74:6379/1",
+          "Queue": "master-User001"
+        }
+      }
+    ],
+    "Hello": [
+      {
+        "Id": "Hello001",
+        "ByteId": 11,
+        "ProcessID": "development",
+        "Redis": {
+          "Uri": "redis://192.168.0.74:6379/1",
+          "Queue": "master-Hello001"
         }
       }
     ]

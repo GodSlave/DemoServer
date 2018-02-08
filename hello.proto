@@ -1,0 +1,11 @@
+syntax = "proto3";
+package sayHello;
+option go_package = "./module/sayHello";
+
+message Hello_SayHello_Response {
+    string content = 1;
+}
+
+message Hello_SayHello_Request {
+    string param = 1;
+}
