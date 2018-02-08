@@ -32,7 +32,6 @@ func TestLogin(t *testing.T) {
 	testbase.SubI(client, checkChan)
 	message := testbase.BuildIPublishMessage(client, logIn, "User", "Login")
 	testbase.SendMessageWithCheck(client, checkChan, message, t)
-
 }
 
 func TestSayHello(t *testing.T) {

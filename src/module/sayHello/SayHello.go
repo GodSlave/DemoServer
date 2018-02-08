@@ -6,6 +6,7 @@ import (
 	"github.com/GodSlave/MyGoServer/conf"
 	"github.com/GodSlave/MyGoServer/base"
 	"fmt"
+	"github.com/GodSlave/MyGoServer/log"
 )
 
 type HelloModule struct {
@@ -43,6 +44,7 @@ func (m *HelloModule) Run(closeSig chan bool) {
  * 公开接口，不需要用户登陆
  */
 func (m *HelloModule) SayHello(sessionId string) (*Hello_SayHello_Response, *base.ErrorCode) {
+	log.Info("Hello Called....")
 	return &Hello_SayHello_Response{"Hello"}, base.ErrNil
 }
 

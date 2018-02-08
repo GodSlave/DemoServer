@@ -1,0 +1,37 @@
+{
+  "Debug": true,
+  "OnlineLimit": 8000,
+  "Name": "master",
+  "Master": {
+    //是否启动Master功能
+    "ISRealMaster": true,
+    //记录统计信息
+    "DBConfig": {
+      "DBName": "stastic",
+      "UserName": "develop",
+      "Password": "Woaini123!",
+      "Addr": "http://192.168.0.74:8086",
+      "Precision": ""
+    },
+    "RedisUrl": "redis://192.168.0.74:6379/2",
+    "RedisPubSubConf": {
+      "Uri": "redis://192.168.0.74:6379/2",
+      "Queue": "APPTrans"
+    },
+    //是否启用集群功能
+    "Enable": true
+  },
+  "Module": {
+  },
+  "Rpc": {
+    // 远程访问最后期限值 单位秒 这个值指定了在客户端可以等待服务端多长时间来应答
+    "RpcExpired": 3
+  },
+  "DB": {
+    "DBtype": "mysql",
+    "SQL": "develop:Woaini123!@tcp(192.168.0.74:3306)/gameserver?charset=utf8",
+    "Redis": "redis://192.168.0.74:6379/1"
+  },
+  //是否启用加密传输
+  "Secret": true
+}
